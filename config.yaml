@@ -1,0 +1,57 @@
+target_folder: "/media"
+default_folder: "/media/manual_sort"
+original_move_folder: "/media/originals"
+
+folders:
+    Telekom:
+        - Telekom
+    O2:
+        - O2
+    Sixt:
+        - Sixt
+    Amazon:
+        - Amazon
+    1und1:
+        - "1&1"
+    Buszgeld:
+        - geldstelle
+        - Polizei
+        - Zeugen
+    Miele:
+        - Miele
+    TK:
+        - Krankenkasse
+        - Techniker
+    Bedienungsanleitungen:
+        - Gebrauchsanleitung
+        - Bedienungsanleitung
+    KFZ:
+        - DEVK
+        - KFZ
+        - Kraftfahrzeug
+        - Kennzeichen
+        - Erstzulassung
+        - Autoteile
+        - Werkstatt
+    Kind:
+        - Kita
+        - Kindergarten
+    Zahnarzt:
+        - Zahnarzt
+    GEZ:
+      - Beitragsservice
+      - Rundfunk
+      - Deutschlandradio
+    Finanzamt:
+      - Steuererk
+      - Finanzamt
+      
+tesseract:
+    binary: "/usr/bin/tesseract"
+    threads: 8
+
+ghostscript:
+    binary: "/usr/bin/gs"
+
+preprocess:
+    threads: 8
