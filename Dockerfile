@@ -22,4 +22,4 @@ RUN cp /usr/share/tesseract-ocr/tessdata/${LANG}.traineddata /usr/share/tesserac
 
 VOLUME /media
 
-CMD ["pypdfocr"]
+ENTRYPOINT ["pypdfocr"]
