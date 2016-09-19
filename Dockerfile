@@ -1,12 +1,17 @@
 FROM ubuntu:latest
 MAINTAINER Markus Matiaschek <mmatiaschek@ai-ag.de>
 
-ENV LANG deu
-# apt-get install tesseract-ocr tesseract-ocr-deu ghostscript imagemagick
+ENV T_LANG deu
+
+RUN locale-gen en_US.UTF-8  
+ENV LANG en_US.UTF-8  
+ENV LANGUAGE en_US:en  
+ENV LC_ALL en_US.UTF-8  
+
 
 RUN apt-get update && apt-get install -y \
 	tesseract-ocr \
-	tesseract-ocr-${LANG} \
+	tesseract-ocr-${T_LANG} \
 	ghostscript \
 	imagemagick \
 	python \
@@ -18,8 +23,8 @@ RUN apt-get update && apt-get install -y \
 	poppler-utils
 
 RUN pip install pypdfocr
-RUN cp /usr/share/tesseract-ocr/tessdata/${LANG}.traineddata /usr/share/tesseract-ocr/tessdata/osd.traineddata
+RUN cp /usr/share/tesseract-ocr/tessdata/${T_LANG}.traineddata /usr/share/tesseract-ocr/tessdata/osd.traineddata
 
 VOLUME /media
 
-ENTRYPOINT ["pypdfocr"]
+ENTRYPOINT ["/usr/local/bin/pypdfocr"]

@@ -28,17 +28,31 @@ docker run --rm mmatiaschek/pypdfocr [-h] [-d] [-v] [-m] [-l LANG] [--preprocess
 ### Case 1: Single Document
 
 ```
-TODO
+docker run --rm mmatiaschek/pypdfocr filename.pdf
 ```
+
+--> filename_ocr.pdf will be generated
+
 
 ### Case 2 : Watch folder
 
 ```
-docker run -v /Users/mmatiaschek/Documents/Paper:/media --rm mmatiaschek/pypdfocr -w /Users/mmatiaschek/Documents/Paper -f -c /Users/mmatiaschek/Documents/Paper/config.yaml
+docker run -v /Users/mmatiaschek/Documents/Paper:/media --rm mmatiaschek/pypdfocr -w /media -f -c /media/config.yaml
 ```
 
 ### Help
 
 ```
-...
+docker run --rm mmatiaschek/pypdfocr [-h] [-d] [-v] [-m] [-l LANG] [--preprocess]
+                [--skip-preprocess] [-w WATCH_DIR] [-f] [-c CONFIGFILE] [-e]
+                [-n]
+                [pdf_filename]
 ```
+
+### How i use this image
+
+1. I use Scanner Pro on iOS (scanbot on Android) to scan and uplaod documents to a WebDAV folder without OCR
+2. The WebDAV folder is hosted on my Synology DiskStation NAS via HTTPS and shared between devices with CloudStation
+3. I run this PyPDFOCR on Docker manually on Mac OS X or hosted on a local server
+
+This way my personal documents don't have to leave my hardware or network aka personal cloud.
