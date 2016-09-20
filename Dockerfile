@@ -20,7 +20,7 @@ RUN apt-get update && apt-get install -y \
 	gcc \
 	libjpeg-dev \
 	minizip \
-	poppler-utils
+	poppler-utils 
 
 RUN pip install pypdfocr
 RUN cp /usr/share/tesseract-ocr/tessdata/${T_LANG}.traineddata /usr/share/tesseract-ocr/tessdata/osd.traineddata
@@ -28,7 +28,7 @@ RUN cp /usr/share/tesseract-ocr/tessdata/${T_LANG}.traineddata /usr/share/tesser
 # Patch for Issue #41 of pypdfocr 0.9.0 - to be fixed in 0.9.1
 WORKDIR /
 COPY issue_41.patch .
-RUN patch -l /usr/local/lib/python2.7/dist-packages/pypdfocr/pypdfocr_watcher.py -i issue.patch
+RUN patch -l /usr/local/lib/python2.7/dist-packages/pypdfocr/pypdfocr_watcher.py -i issue_41.patch
 
 VOLUME /media
 

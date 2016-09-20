@@ -1,7 +1,7 @@
---- pypdfocr_watcher.py	2016-09-20 10:02:06.556301294 +0000
-+++ pypdfocr_watcher.py	2016-09-20 10:04:21.092354886 +0000
+--- /media/pypdfocr/pypdfocr/pypdfocr_watcher.py	2016-09-20 11:32:20.000000000 +0000
++++ /usr/local/lib/python2.7/dist-packages/pypdfocr/pypdfocr_watcher.py	2016-09-20 11:42:22.202438140 +0000
 @@ -93,7 +93,7 @@
-
+ 
          """
          if ev_path.endswith(".pdf"):
 -            if not ev_path.endswith("_ocr.pdf"):
