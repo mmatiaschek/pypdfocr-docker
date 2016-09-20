@@ -17,6 +17,8 @@ PyPDFOCR converts a scanned PDF into an OCR'ed PDF using Tesseract-OCR and Ghost
 
 This Docker image is based on the [official Ubuntu](https://hub.docker.com/_/ubuntu/) base image.
 
+It incorporates a patch for issue [#41](https://github.com/virantha/pypdfocr/issues/41) of pypdfocr 0.9.0 likely to be fixed in 0.9.1
+
 ## How to use this image
 
 ```
@@ -50,6 +52,13 @@ docker run --rm mmatiaschek/pypdfocr [-h] [-d] [-v] [-m] [-l LANG] [--preprocess
                 [-n]
                 [pdf_filename]
 ```
+
+Interactive Shell
+
+```
+docker run --entrypoint=/bin/bash -t -i mmatiaschek/pypdfocr
+```
+
 
 ### How i use this image
 
